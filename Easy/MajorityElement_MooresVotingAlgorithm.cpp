@@ -18,7 +18,14 @@ for(int i = 0; i<n; i++){
         freq--;
         }
     }
-    if (freq > n / 2) {
+    int actualCount = 0;
+    for (int i = 0; i < n; i++) {
+        if (nums[i] == ans) {
+            actualCount++;
+        }
+    }
+
+    if (actualCount > n / 2) {
         return ans;
     } else {
         return -1; // No majority element
@@ -36,3 +43,4 @@ int main() {
 
     return 0;
 }
+
