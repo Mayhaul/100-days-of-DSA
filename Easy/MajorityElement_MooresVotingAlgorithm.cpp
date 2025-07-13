@@ -3,36 +3,34 @@
 using namespace std;
 
 int majElement(vector<int>& nums) {
-    int count = 0;
-    int candidate = 0;
+int freq = 0;
+int ans = 0;
+int n = nums.size();
 
-    // Step 1: Find a potential candidate
-    for (int num : nums) {
-        if (count == 0) {
-            candidate = num;
+for(int i = 0; i<n; i++){
+    if(freq == 0){
+        ans = nums[i];
         }
-        count += (num == candidate) ? 1 : -1;
+    if(nums[i] == ans){
+        freq++;
+        }
+    else{
+        freq--;
+        }
     }
-
-    // Step 2: Confirm the candidate is actually majority
-    count = 0;
-    for (int num : nums) {
-        if (num == candidate)
-            count++;
+    if (freq > n / 2) {
+        return ans;
+    } else {
+        return -1; // No majority element
     }
-
-    if (count > nums.size() / 2)
-        return candidate;
-    else
-        return -1;
 }
 
 int main() {
     vector<int> nums = {1, 2, 2, 2, 4};
-    int result = majElement(nums);
+    int ans = majElement(nums);
 
-    if (result != -1)
-        cout << "Majority Element: " << result << endl;
+    if (ans != -1)
+        cout << "Majority Element: " << ans << endl;
     else
         cout << "No Majority Element" << endl;
 
