@@ -5,7 +5,7 @@ using namespace std;
 
 
 int main(){
-vector<int> nums = {7, 3,2,5};
+vector<int> nums = {24,5,35,67,3};
 int n = nums.size();
 int j = 0;
 
@@ -28,7 +28,7 @@ int minIndex = i;
     
 }
 for(int num : nums){
-    cout<<num;
+    cout<<num<<" ";
 }
     return 0;
 }
