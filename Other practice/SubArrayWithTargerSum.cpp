@@ -23,5 +23,6 @@ int main(){
         }
     }
     if(found == false) cout<<"No subarray satisfies the condition.";
-    return 0;
+    
+return 0;
 }
